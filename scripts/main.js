@@ -15,10 +15,14 @@ requirejs.config({
       //module value.
       exports: 'Backbone'
      },
+    handlebars:{
+      exports:'Handlebars'
+    }
   },
 	baseUrl: 'scripts',
   paths: {
     underscore: 'libs/underscore/underscore',
+    handlebars: 'libs/handlebars/handlebars',
     backbone: 'libs/backbone/backbone',
     jquery: 'libs/jquery/jquery',
     templates: '../templates'
@@ -26,6 +30,6 @@ requirejs.config({
 
 });
 
-requirejs(['app','jquery','underscore','backbone'],function(App) {
+requirejs(['app','jquery','underscore','backbone','handlebars'],function(App) {
   App.initialize();
 });

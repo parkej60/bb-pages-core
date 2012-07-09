@@ -1,15 +1,15 @@
 define([
   // These are path alias that we configured in our bootstrap
   'jquery',
-  'underscore',
   'backbone',
+  'handlebars',
   'text!templates/page.html',
   'json2'
-], function($, _ , Backbone,pageViewTemplate){
+], function($, Backbone, Handlebars, pageViewTemplate){
 	var PageView = Backbone.View.extend({
 
 		//Define the default template
-		template: _.template(pageViewTemplate),
+		template: Handlebars.compile(pageViewTemplate),
 
 		//The parent div for this element
 		el:'#content',
