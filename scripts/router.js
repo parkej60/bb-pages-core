@@ -1,31 +1,39 @@
 define([
-  'zepto',
   'underscore',
   'backbone',
   'collections/pages',
   'views/pageView',
-], function($, _, Backbone,Pages,PageView){
+], function(_, Backbone,Pages,PageView){
+
+	var pages = {};
+
 	var AppRouter = Backbone.Router.extend({
-	  initialize:function(){
+
+		initialize:function(){
 		  Backbone.history.start();
-	  },
-	  
-	  routes: {
-	  	"":											"template",
-		  "page/:query":          "page"
+		},
+
+		routes: {
+			"":					"load",
+			"page/:index":		"load"
 		},
 		
-		/*
-		template:function(){
-			var newPage = new PageView({model:LoadPage.at(0)});
+		load:function(index){
+			if(index === undefined){
+				index = 0;
+			}
+
+			PageView.model = pages.at(index);
+			PageView.render();
 		},
-		page: function(query) {
-			var newPage = new PageView({model:PageList.at(query)});
-	  }
-	  */
+
 	});
-	
-	var initialize = function(){
+
+	var initialize = function(data){
+		
+		//Set bootstraped collection
+		pages = data;
+
 		var app_router = new AppRouter;
 	}
 	

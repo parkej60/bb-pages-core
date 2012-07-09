@@ -4,25 +4,28 @@
 // There usage will become more apparent futher along in the tutorial.
 requirejs.config({
 	shim: {
-  	'backbone': {
+    underscore:{
+      exports:'_'
+    },
+  	backbone: {
       //These script dependencies should be loaded before loading
       //backbone.js
-      deps: ['zepto','underscore'],
+      deps: ['underscore','jquery'],
       //Once loaded, use the global 'Backbone' as the
       //module value.
       exports: 'Backbone'
-     }
+     },
   },
 	baseUrl: 'scripts',
   paths: {
-    zepto: 'libs/zepto/zepto',
     underscore: 'libs/underscore/underscore',
     backbone: 'libs/backbone/backbone',
+    jquery: 'libs/jquery/jquery',
     templates: '../templates'
   }
 
 });
 
-requirejs(['app','zepto','underscore','backbone'],function(App) {
+requirejs(['app','jquery','underscore','backbone'],function(App) {
   App.initialize();
 });

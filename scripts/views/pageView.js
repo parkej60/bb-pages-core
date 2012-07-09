@@ -1,15 +1,25 @@
 define([
   // These are path alias that we configured in our bootstrap
-  'zepto',
+  'jquery',
   'underscore',
   'backbone',
-  'text!templates/page.html'
-], function($, _, Backbone,pageViewTemplate){
+  'text!templates/page.html',
+  'json2'
+], function($, _ , Backbone,pageViewTemplate){
 	var PageView = Backbone.View.extend({
+
+		//Define the default template
+		template: _.template(pageViewTemplate),
+
+		//The parent div for this element
+		el:'#content',
+
+		initialize:function(){
+			
+		},
+		//Render function
 		render:function(){
-			var data = {};
-			var compiledTemplate = _.template(pageViewTemplate,data);
-			this.el.html(this.template(compiledTemplate));
+			this.$el.html(this.template(this.model.toJSON()));
 		},
 	});
   return new PageView;

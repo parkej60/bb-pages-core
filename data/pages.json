@@ -2,7 +2,7 @@
   "pages": [
     {
       "title": "Page1",
-      "content":"This is content"
+      "content":"<ul><li><a href='#page/1'>Page 2</a></li></ul>"
     },
     {
       "title": "Page2",

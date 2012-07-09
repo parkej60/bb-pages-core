@@ -1,16 +1,24 @@
 // Filename: app.js
 define([
-  'zepto',
+  'jquery',
   'underscore',
   'backbone',
   'router', // Request router.js
 ], function($, _, Backbone, Router){
-  var initialize = function(){
-    // Pass in our Router module and call it's initialize function
-    Router.initialize();
-  }
 
+  var pages = new Backbone.Collection();
+
+  var initialize = function(){
+    $.getJSON('../data/pages.json',function(data){
+      $.each(data,function(key,val){
+        pages.add(val);
+      });
+
+      Router.initialize(pages);
+    });
+  }
   return {
-    initialize: initialize
+    initialize: initialize,
+    pages:pages
   };
 });
