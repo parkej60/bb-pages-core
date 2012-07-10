@@ -1,40 +1,49 @@
 define([
   'underscore',
   'backbone',
-  'collections/pages',
-  'views/pageView',
-], function(_, Backbone,Pages,PageView){
-
-	var pages = {};
+  'views/appView'
+], function(_, Backbone,AppView){
 
 	var AppRouter = Backbone.Router.extend({
 
-		initialize:function(){
-		  Backbone.history.start();
+		view:{},
+
+		initialize:function(data){
+		  	//Triggers AppView Initialize
+			this.view = new AppView({model:data});
+		  	Backbone.history.start();
 		},
 
 		routes: {
-			"":					"load",
-			"page/:index":		"load"
+			"":									"load",
+			"section/:section":                 "load",
+			"section/:section/p:page":			"load",
 		},
 		
-		load:function(index){
-			if(index === undefined){
-				index = 0;
+		load:function(section,page){
+			//Default to the first page
+			if(section === undefined){
+				section = 0;
+			}else{
+				section = section - 1;
 			}
 
-			PageView.model = pages.at(index);
-			PageView.render();
+			if(page === undefined){
+				page = -1;
+			}else{
+				page = page - 1;
+			}
+
+			
+			this.view.render(section,page);	
 		},
 
 	});
 
 	var initialize = function(data){
-		
-		//Set bootstraped collection
-		pages = data;
 
-		var app_router = new AppRouter;
+		//This triggers AppRouter.initalize()
+		new AppRouter(data);
 	}
 	
 	return{

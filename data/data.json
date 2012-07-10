@@ -1,0 +1,67 @@
+{
+  "main_menu":
+   {
+      "links":[
+        {
+          "link":"Section 1",
+          "href":"#section/1"
+        },
+        {
+          "link":"Section 2",
+          "href":"#section/2"
+        }
+      ]
+  },
+  "sections":[
+    {
+      "id":1,
+      "title":"Section 1",
+      "content":"This is content",
+      "pages": [
+        {
+          "title": "Page1a",
+          "content":"<ul><li><a href='#section/1/p2'>Page 2a</a></li></ul>",
+          "transition":"slide",
+          "id":1
+        },
+        {
+          "title": "Page2a",
+          "content":"<ul><li><a href='#section/2/p1'>Section 2 - Page1b</a></li></ul>",
+          "transition":"slide",
+          "id":2
+        },
+        {
+          "title": "Page3a",
+          "content":"<ul><li><a href='#section/1'>Section 1</a></li></ul>",
+          "transition":"slide",
+          "id":3
+        }
+      ]
+    },
+    {
+      "id":2,
+      "title":"Section 2",
+      "content":"This is content",
+      "pages": [
+        {
+          "title": "Page1b",
+          "content":"<ul><li><a href='#section/2/p2'>Page 2b</a></li></ul>",
+          "transition":"slide",
+          "id":1
+        },
+        {
+          "title": "Page2b",
+          "content":"<ul><li><a href='#section/1/p1'>Section 1 - Page1a</a></li></ul>",
+          "transition":"slide",
+          "id":2
+        },
+        {
+          "title": "Page3b",
+          "content":"<ul><li><a href='#section/2'>Section 2</a></li></ul>",
+          "transition":"slide",
+          "id":3
+        }
+      ]
+    }
+  ] 
+}

@@ -1,0 +1,19 @@
+<div class="section" id="section-{{id}}">
+	<h1>{{title}}</h1>
+	<div class="content">
+	  <p>{{{content}}}</p>
+	  <div class="pages">
+	  	{{#pages}}
+		<div class="page {{transition}}">
+			<h2>{{title}}</h2>
+			<p>{{{content}}</p>
+		</div>
+		{{/pages}}
+	  </div>
+	</div>
+	<div class="pager">
+		{{#pages}}
+		<a href="/#section/{{../id}}/p{{id}}">{{title}}</a>
+		{{/pages}}
+	</div>
+</div>

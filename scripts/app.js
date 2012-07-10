@@ -5,20 +5,15 @@ define([
   'backbone',
   'router', // Request router.js
 ], function($, _, Backbone, Router){
-
-  var pages = new Backbone.Collection();
-
+  
+  //Bootstrap our data so that it is available on load.
   var initialize = function(){
-    $.getJSON('../data/pages.json',function(data){
-      $.each(data,function(key,val){
-        pages.add(val);
-      });
-
-      Router.initialize(pages);
+    $.getJSON('../data/data.json',function(data){
+      Router.initialize(data);
     });
   }
+
   return {
     initialize: initialize,
-    pages:pages
   };
 });

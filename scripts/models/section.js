@@ -2,15 +2,15 @@ define([
   'underscore', // lib/underscore/underscore
   'backbone'    // lib/backbone/backbone
 ], function(_, Backbone){
-	var Page = Backbone.Model.extend({
+	var Section = Backbone.Model.extend({
 	
 	  // Default attributes for the todo.
 	  defaults: {
 	  	title:	"[Title]",
-	    content: "[Content]",
-	    transition: "slide",
-	  },
+	  	content: "[Content]",
+	  	pages: {},
+	  },	  
 	});
-  return Page;
+  return Section;
   // What we return here will be used by other modules
 });

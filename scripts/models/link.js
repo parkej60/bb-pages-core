@@ -2,15 +2,15 @@ define([
   'underscore', // lib/underscore/underscore
   'backbone'    // lib/backbone/backbone
 ], function(_, Backbone){
-	var Page = Backbone.Model.extend({
+	var Link = Backbone.Model.extend({
 	
-	  // Default attributes for the todo.
+	  // Default attributes, although these should always be set
 	  defaults: {
-	  	title:	"[Title]",
-	    content: "[Content]",
-	    transition: "slide",
+	  	link: "[Title]",
+	    href: "/#page/1",
 	  },
+	  
 	});
-  return Page;
+  return Link;
   // What we return here will be used by other modules
 });
