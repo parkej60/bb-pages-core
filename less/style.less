@@ -1,6 +1,33 @@
-.page{
-	display:none;
+@width:1024px;
+@height:728px;
+
+body{
+	margin:0px;
+	padding:0px;
 }
-.page.active{
-	display:block;
+#app{
+	max-width: @width;
+	max-height:@height;
+	min-width:@width;
+	min-height: @height;
+	background:#f1f1f1;
+	overflow: hidden;
+}
+
+.section{
+	position:relative;
+}
+.page {
+  display: none;
+  -webkit-transform:translateX(0px);
+}
+.page.active {
+  display: block;
+}
+[data-section-transition="fade"] .page{
+	opacity:0;
+}
+[data-section-transition="slide"] .page{
+	position:absolute;
+	left:@width;
 }

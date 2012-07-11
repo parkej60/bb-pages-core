@@ -1,14 +1,12 @@
 // Filename: app.js
 define([
-  'jquery',
-  'underscore',
-  'backbone',
+  'zepto',
   'router', // Request router.js
-], function($, _, Backbone, Router){
+], function($, Router){
   
   //Bootstrap our data so that it is available on load.
   var initialize = function(){
-    $.getJSON('../data/data.json',function(data){
+    $.getJSON('data/data.json',function(data){
       Router.initialize(data);
     });
   }

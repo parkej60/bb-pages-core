@@ -1,6 +1,6 @@
 define([
   // These are path alias that we configured in our bootstrap
-  'jquery',
+  'zepto',
   'underscore',
   'backbone',
   'handlebars',
@@ -14,7 +14,7 @@ define([
 		mainMenu:{},
 
 		//Stores reference to current page
-		section:{},
+		view:{},
 
 		//The parent div
 		el:'#app',
@@ -34,13 +34,13 @@ define([
 			this.mainMenu.render();
 
 			//Loads the page view
-			this.section = new SectionView({model:Sections.at(0)});
-			this.section.render();
+			this.view = new SectionView();
+			
 	    },
 
 	    //Currently just renders a page view with a designated model from the Pages collection
 	    render:function(section,page){
-	    	this.section.load(Sections.at(section),page);
+	    	this.view.load(Sections.at(section),page);
 	    },
 
 	    active:function(event){

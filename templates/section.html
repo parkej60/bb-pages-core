@@ -1,19 +1,32 @@
-<div class="section" id="section-{{id}}">
+<div data-section-transition="{{transition}}" class="section" id="section-{{id}}">
 	<h1>{{title}}</h1>
-	<div class="content">
-	  <p>{{{content}}}</p>
-	  <div class="pages">
-	  	{{#pages}}
-		<div class="page {{transition}}">
-			<h2>{{title}}</h2>
-			<p>{{{content}}</p>
-		</div>
-		{{/pages}}
-	  </div>
-	</div>
-	<div class="pager">
+	{{#if sidebar}}
+	<div class="sidebar">
+	 	<div class="sub-menu">
 		{{#pages}}
-		<a href="/#section/{{../id}}/p{{id}}">{{title}}</a>
+			<a href="#section/{{../id}}/p{{id}}">{{title}}</a>
 		{{/pages}}
+		</div>
+	</div>
+	{{/if}}
+	<div class="content">	
+	  	<p>{{{content}}}</p>
+	  	<div class="pages">
+	  		{{#pages}}
+	  			<div class="page" id="page-{{id}}">
+				<h2>{{title}}</h2>
+				<p>{{{content}}</p>
+			</div>
+			{{/pages}}
+	  	</div>
+		{{#if pager}}
+		<div class="pager">
+			<ul>
+				{{#pages}}
+				<li><a href='#section/{{../id}}/p{{id}}'>{{title}}</a></li>
+				{{/pages}}
+			</ul>
+		</div>
+		{{/if}}
 	</div>
 </div>

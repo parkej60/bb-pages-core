@@ -16,50 +16,56 @@
     {
       "id":1,
       "title":"Section 1",
+      "sidebar":false,
+      "pager":true,
       "content":"This is content",
+      "transition":"fade",
       "pages": [
         {
+          "id":1,
           "title": "Page1a",
-          "content":"<ul><li><a href='#section/1/p2'>Page 2a</a></li></ul>",
-          "transition":"slide",
-          "id":1
+          "content":"<ul><li><a href='#section/1/p2'>Page 2a</a></li></ul>"
+          
         },
         {
+          "id":2,
           "title": "Page2a",
-          "content":"<ul><li><a href='#section/2/p1'>Section 2 - Page1b</a></li></ul>",
-          "transition":"slide",
-          "id":2
+          "content":"<ul><li><a href='#section/2/p1'>Section 2 - Page1b</a></li></ul>"
+          
         },
         {
+          "id":3,
           "title": "Page3a",
-          "content":"<ul><li><a href='#section/1'>Section 1</a></li></ul>",
-          "transition":"slide",
-          "id":3
+          "content":"<ul><li><a href='#section/1'>Section 1</a></li></ul>"
+          
         }
       ]
     },
     {
       "id":2,
       "title":"Section 2",
+      "sidebar":true,
+      "pager":false,
       "content":"This is content",
+      "transition":"slide",
       "pages": [
         {
+          "id":1,
           "title": "Page1b",
-          "content":"<ul><li><a href='#section/2/p2'>Page 2b</a></li></ul>",
-          "transition":"slide",
-          "id":1
+          "content":"<ul><li><a href='#section/2/p2'>Page 2b</a></li></ul>"
+         
         },
         {
+          "id":2,
           "title": "Page2b",
-          "content":"<ul><li><a href='#section/1/p1'>Section 1 - Page1a</a></li></ul>",
-          "transition":"slide",
-          "id":2
+          "content":"<ul><li><a href='#section/1/p1'>Section 1 - Page1a</a></li></ul>"
+          
         },
         {
+          "id":3,
           "title": "Page3b",
-          "content":"<ul><li><a href='#section/2'>Section 2</a></li></ul>",
-          "transition":"slide",
-          "id":3
+          "content":"<ul><li><a href='#section/2'>Section 2</a></li></ul>"
+          
         }
       ]
     }

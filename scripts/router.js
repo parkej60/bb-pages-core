@@ -44,6 +44,8 @@ define([
 
 		//This triggers AppRouter.initalize()
 		new AppRouter(data);
+
+
 	}
 	
 	return{

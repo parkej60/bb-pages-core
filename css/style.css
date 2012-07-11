@@ -1,6 +1,29 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+#app {
+  max-width: 1024px;
+  max-height: 728px;
+  min-width: 1024px;
+  min-height: 728px;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+.section {
+  position: relative;
+}
 .page {
   display: none;
+  -webkit-transform: translatex(0px);
 }
 .page.active {
   display: block;
+}
+[data-section-transition="fade"] .page {
+  opacity: 0;
+}
+[data-section-transition="slide"] .page {
+  position: absolute;
+  left: 1024px;
 }

@@ -1,6 +1,6 @@
 define([
   // These are path alias that we configured in our bootstrap
-  'jquery',
+  'zepto',
   'backbone',
   'handlebars',
   'text!templates/menu.html'
